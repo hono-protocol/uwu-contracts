@@ -16,9 +16,10 @@
     "cross-not-official": "^1.0.0"
   },
   "scripts": {
-    "deploy-testnet": "npx hardhat ignition deploy ignition/modules/All-base.ts --network basesepolia --verify",
-    "deploy-testnet-arb": "npx hardhat ignition deploy ignition/modules/All-arb.ts --network arbitrumSepolia --verify",
-
+    "deploy-testnet": "npx hardhat ignition deploy ignition/modules/sepolia-base.ts --network basesepolia --verify",
+    "deploy-testnet-arb": "npx hardhat ignition deploy ignition/modules/sepolia-arb.ts --network arbitrumSepolia --verify",
+    "deploy-prod-base": "npx hardhat ignition deploy ignition/modules/PROD-base.ts --network base --verify",
+    "deploy-prod-arb": "npx hardhat ignition deploy ignition/modules/PROD-arb.ts --network arbitrum --verify",
     "test": "npx hardhat test"
   }
 }

@@ -40,12 +40,20 @@ const config: HardhatUserConfig = {
     }
   },
   networks: {
+    arbitrum:{
+      url: `https://arb1.arbitrum.io/rpc`,
+      accounts: [process.env.PRIVATE_KEY || ""],
+    },
     arbitrumSepolia:{
       url: `https://sepolia-rollup.arbitrum.io/rpc`,
       accounts: [process.env.PRIVATE_KEY || ""],
     },
     basesepolia: {
       url: `https://sepolia.base.org`,
+      accounts: [process.env.PRIVATE_KEY || ""],
+    },
+    base: {
+      url: `https://mainnet.base.org`,
       accounts: [process.env.PRIVATE_KEY || ""],
     },
     sepolia: {
@@ -67,15 +75,33 @@ const config: HardhatUserConfig = {
       blast: "blast", // apiKey is not required, just set a placeholder
       basesepolia:"V6RE99UGKFGQCEGZ67XDPRWXYXGXUY583P",
       arbitrumSepolia: "UEZH33MMNHMBMNRK3RCXQH6IQBRCMX7H7Z",
-
+      base:"V6RE99UGKFGQCEGZ67XDPRWXYXGXUY583P",
+      arbitrum: "UEZH33MMNHMBMNRK3RCXQH6IQBRCMX7H7Z",
     },
     customChains: [
+      {
+        network: "arbitrum",
+        chainId: 42161,
+        urls: {
+            apiURL: "https://api.arbiscan.io/api",
+            browserURL: "https://arbiscan.io/",
+        },
+      },
       {
         network: "arbitrumSepolia",
         chainId: 421614,
         urls: {
             apiURL: "https://api-sepolia.arbiscan.io/api",
             browserURL: "https://sepolia.arbiscan.io/",
+        },
+      },
+      {
+        network: "base",
+        chainId: 8453,
+        urls: {
+          apiURL:
+            "https://api.basescan.org/api",
+          browserURL: "https://basescan.org/",
         },
       },
       {

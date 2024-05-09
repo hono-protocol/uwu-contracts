@@ -10,7 +10,7 @@ const VoterCCModule = buildModule("VoterCC", (m) => {
   m.call(ccip, "updateVoterContracts", [voter,true]);
   m.call(ccip, "updateMasterVoter", [voter]);
 
-  return { ccip, "voter" ,storage};
+  return { ccip,voter ,storage};
 });
 
 export default VoterCCModule;

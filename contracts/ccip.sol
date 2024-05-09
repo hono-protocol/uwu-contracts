@@ -101,7 +101,9 @@ contract VoterCC is CCIPReceiver, OwnerIsCreator {
     function updateRecieverCCIP(address _newReceiver) external onlyOwner {
         receiver = _newReceiver;
     }
-
+    function setAllowListSenders(address sender, bool allowed) external onlyOwner {
+        allowlistedSenders[sender] = (allowed);
+    }
     function updateMasterVoter(address newMasterVoter) external onlyOwner {
         masterVoter = IMasterVoter(newMasterVoter);
     }
