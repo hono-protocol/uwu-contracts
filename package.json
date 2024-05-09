@@ -12,10 +12,11 @@
   "dependencies": {
     "@nomicfoundation/hardhat-network-helpers": "^1.0.10",
     "@openzeppelin/contracts": "^5.0.2",
-    "@openzeppelin/contracts-upgradeable": "^5.0.2"
+    "@openzeppelin/contracts-upgradeable": "^5.0.2",
+    "cross-not-official": "^1.0.0"
   },
   "scripts": {
-    "deploy-testnet": "npx hardhat ignition deploy ignition/modules/Lock.ts --network sepolia --verify",
+    "deploy-testnet": "npx hardhat ignition deploy ignition/modules/Lock.ts --network basesepolia --verify",
     "test": "npx hardhat test"
   }
 }

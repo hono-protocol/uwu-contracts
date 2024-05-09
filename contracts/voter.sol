@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.24;
+pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-interface VoteStorage
+interface IVoteStorage
 {
     function upvote(uint256 postID,uint256 eventId,uint256 amount, address sender) external;
 }
@@ -27,7 +27,7 @@ contract Voter is Ownable {
     uint256 public defaultVotePrice = 1000000;
     uint64 public masterChainID = 12532609583862916517;
     bool public isMasterVoter = false;
-    VoteStorage public voteStorage;
+    IVoteStorage public voteStorage;
     CrossChainContract public CCIP;
     IERC20 public USDC;
     modifier onlyCCIPAddresses() {
@@ -51,7 +51,7 @@ contract Voter is Ownable {
     }
 
     function ChangeVoteStorage(address _voteStorage) external onlyOwner {
-        voteStorage = VoteStorage(_voteStorage);
+        voteStorage = IVoteStorage(_voteStorage);
     }
 
     function ChangeCrossChainContract(address _CCIP) external onlyOwner {

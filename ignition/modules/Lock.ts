@@ -3,10 +3,10 @@ import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";
 const VoterCCModule = buildModule("VoterCC", (m) => {
   const erc20 = m.contract("ERC20Token", ["HonoTest", "HONO"]);
 
-  const ccip = m.contract("VoterCC",[0x141fa059441E0ca23ce184B6A78bafD2A517DdE8]);
+  const ccip = m.contract("VoterCC",["0xD3b06cEbF099CE7DA4AcCf578aaebFDBd6e88a93"]);
   const voter = m.contract("Voter", [erc20, ccip, true]);
   const storage = m.contract("VoteStorage", [voter]);
-  voter.ChangeVoteStorage(storage);
+  m.call(voter, "ChangeVoteStorage", [storage]);
   return { ccip, voter ,storage};
 });
 
