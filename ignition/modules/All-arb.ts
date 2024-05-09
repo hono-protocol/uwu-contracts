@@ -7,6 +7,8 @@ const VoterCCModule = buildModule("VoterCCARB", (m) => {
   const voter = m.contract("Voter", [erc20, ccip, true]);
   const storage = m.contract("VoteStorage", [voter]);
   m.call(voter, "ChangeVoteStorage", [storage]);
+  m.call(ccip, "updateVoterContracts", [voter,true]);
+  m.call(ccip, "updateMasterVoter", [voter]);
   return { ccip, voter ,storage};
 });
 
