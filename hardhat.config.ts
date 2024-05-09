@@ -40,6 +40,10 @@ const config: HardhatUserConfig = {
     }
   },
   networks: {
+    arbitrumSepolia:{
+      url: `https://sepolia-rollup.arbitrum.io/rpc`,
+      accounts: [process.env.PRIVATE_KEY || ""],
+    },
     basesepolia: {
       url: `https://sepolia.base.org`,
       accounts: [process.env.PRIVATE_KEY || ""],
@@ -61,10 +65,19 @@ const config: HardhatUserConfig = {
     apiKey: {
       blast_sepolia: "blast_sepolia", // apiKey is not required, just set a placeholder
       blast: "blast", // apiKey is not required, just set a placeholder
-      basesepolia:"V6RE99UGKFGQCEGZ67XDPRWXYXGXUY583P"
-      
+      basesepolia:"V6RE99UGKFGQCEGZ67XDPRWXYXGXUY583P",
+      arbitrumSepolia: "UEZH33MMNHMBMNRK3RCXQH6IQBRCMX7H7Z",
+
     },
     customChains: [
+      {
+        network: "arbitrumSepolia",
+        chainId: 421614,
+        urls: {
+            apiURL: "https://api-sepolia.arbiscan.io/api",
+            browserURL: "https://sepolia.arbiscan.io/",
+        },
+      },
       {
         network: "basesepolia",
         chainId: 84532,

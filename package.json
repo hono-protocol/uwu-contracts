@@ -16,7 +16,9 @@
     "cross-not-official": "^1.0.0"
   },
   "scripts": {
-    "deploy-testnet": "npx hardhat ignition deploy ignition/modules/Lock.ts --network basesepolia --verify",
+    "deploy-testnet": "npx hardhat ignition deploy ignition/modules/All-base.ts --network basesepolia --verify",
+    "deploy-testnet-arb": "npx hardhat ignition deploy ignition/modules/All-arb.ts --network arbitrumSepolia --verify",
+
     "test": "npx hardhat test"
   }
 }
