@@ -22,7 +22,7 @@ interface CrossChainContract
     ) external payable returns (bytes32 messageId);
 
 }
-contract Voting is Ownable {
+contract Voter is Ownable {
     mapping(uint => uint256) public quantityToVotePrice; // X vote equal to 
     uint256 public defaultVotePrice = 1000000;
     uint64 public masterChainID = 12532609583862916517;

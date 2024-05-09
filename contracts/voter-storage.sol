@@ -4,7 +4,7 @@ pragma solidity ^0.8.24;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-contract Voting is Ownable {
+contract VoteStorage is Ownable {
     mapping(uint256 => uint) public votes; // mapping image url to votes
     mapping(uint => uint256) public quantityToVotePrice; // X vote equal to 
     address public voteContract;

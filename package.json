@@ -1,0 +1,21 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.5",
+    "@openzeppelin/hardhat-upgrades": "^3.1.0",
+    "dotenv": "^16.4.5",
+    "erc721a": "^4.3.0",
+    "erc721a-upgradeable": "^4.3.0",
+    "hardhat": "^2.22.2"
+  },
+  "dependencies": {
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.10",
+    "@openzeppelin/contracts": "^5.0.2",
+    "@openzeppelin/contracts-upgradeable": "^5.0.2"
+  },
+  "scripts": {
+    "deploy-testnet": "npx hardhat ignition deploy ignition/modules/Lock.ts --network sepolia --verify",
+    "test": "npx hardhat test"
+  }
+}
